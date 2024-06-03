@@ -5,9 +5,9 @@
   <title>Dodaj nowe zawody</title>
 </head>
 <body>
-<h1>Zawody koła PZW nr 8 w Bieruiu Nowym</h1>
+<h1>Zawody koła PZW nr 8 w Bieruniu Nowym</h1>
 <h2>Dodawanie nowych zawodów</h2>
-<form>
+<form action="add.php" method="post">
 <label for="discipline">Dyscyplina: </form>
 <select name="discipline" id="discipline">
   <option value="Spławikowej*/Feederowej*">Spławikowej/Feederowej</option>
@@ -40,6 +40,9 @@
 <label for="city">W miejscowości: </label>
 <input type="text" name="city" id="city" required>
 <br>
+<label for="name">Rodzaj zawodów:</label>
+<input type="text" name="name" id="name">
+<br>
 <label for="organiser">Organizator Koło/Klub PZW: </label>
 <input type="text" name="organiser" id="organiser" required>
 <label for="region">Rejon nr: </label>
@@ -60,7 +63,7 @@
 <input type="text" name="controlRef" id="controlRef">
 <br>
 <h3>Przygotowanie terenu: </h3>
-<input type="radio" name="terrain" id="terrain1" value="true">
+<input type="radio" name="terrain" id="terrain1" value="true" checked>
 <label for="terrain1">należyte</label>
 <input type="radio" name="terrain" id="terrain2" value="true">
 <label for="terrain2">wadliwe</label>
@@ -70,4 +73,3 @@
 </form>
 </body>
 </html>
-
