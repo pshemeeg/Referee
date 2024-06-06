@@ -5,8 +5,14 @@
   <title>Dodaj nowe zawody</title>
 </head>
 <body>
+<!--Nagłówek strony tytuł i logo nic więcej tutaj nie chcemy ewentualnie później jakiś prosty baner-->
+<header>
 <h1>Zawody koła PZW nr 8 w Bieruniu Nowym</h1>
+</header>
+<!--Główna zawartość strony formularz dodawania nowych zawodów Wymaga redesignu-->
+<main>
 <h2>Dodawanie nowych zawodów</h2>
+<!--Formularz wysyła dane do pliku add.php który dodaje zawody do bazy i tworzy nową tabelę dla danych zawodów-->
 <form action="add.php" method="post">
 <label for="discipline">Dyscyplina: </form>
 <select name="discipline" id="discipline">
@@ -35,6 +41,7 @@
 <label for="endTime"> - </label>
 <input type="time" name="endTime" id="endTime" required>
 <br>
+<!--Wymienić input text na select dla wyboru łowiska-->
 <label for="water">Na wodzie: </label>
 <input type="text" name="water" id="water" required>
 <label for="city">W miejscowości: </label>
