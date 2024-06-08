@@ -17,18 +17,17 @@ $sectorRef = $_POST['sectorRef'];
 $controlRef = $_POST['controlRef'];
 $terrain = $_POST['terrain'];
 #Otwarcie połączenia z bazą danych
-$mysqli = new mysqli('localhost','root','','referee');
+$mysqli = new mysqli('localhost', 'root', '', 'referee');
 #Sprawdzenie czy połączenie się udało
-if ($mysqli -> connect_errno) {
-  echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+if ($mysqli->connect_errno) {
+  echo "Failed to connect to MySQL: " . $mysqli->connect_error;
   exit();
 }
 #Kwerenda SQL do wykonania na bazie danych dodanie nowych zawodów do tabeli "zawody" !Trzeba to przerobić na sprintf żeby jakoś wyglądało!
 $sql = "INSERT INTO `zawody`(`discipline`, `category`, `turns`, `date`, `startTime`, `endTime`, `water`, `city`, `name`, `organiser`, `region`, `referee`, `secretary`, `sectorRef`, `controlRef`, `terrain`) VALUES ('$discipline','$category','$turns','$date','$startTime','$endTime','$water','$city','$name','$organiser','$region','$referee','$secretary','$sectorRef','$controlRef','$terrain')";
 #Wykonanie kwerendy na bazie danych
-$mysqli -> query($sql); 
+$mysqli->query($sql);
 #Zamknięcie połączenia z bazą
-$mysqli -> close();
+$mysqli->close();
 #Przekierowanie na stronę główną
 header('Location:index.php')
-?>
