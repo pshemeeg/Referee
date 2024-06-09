@@ -3,7 +3,7 @@
 require_once 'database_connection.php';
 
 // Definicja funkcji do pobierania lat zawodów
-function getYears($conn)
+function getYears($conn) : array
 {
     // Zapytanie SQL do pobierania unikalnych lat zawodów
     $query = "SELECT DISTINCT YEAR(date) AS year FROM championships";
@@ -24,7 +24,7 @@ function getYears($conn)
 }
 
 // Definicja funkcji do pobierania informacji o zawodach dla danego roku
-function getChampionshipsForYear($conn, $year)
+function getChampionshipsForYear($conn, $year) : array
 {
     // Zapytanie SQL do pobierania informacji o zawodach dla danego roku
     $query = "SELECT id, date, startTime, endTime, name FROM championships WHERE YEAR(`date`) = $year";
@@ -45,7 +45,7 @@ function getChampionshipsForYear($conn, $year)
 }
 
 // Definicja funkcji do pobierania szczegółowych informacji o zawodach na podstawie podanego ID
-function getChampionshipInfo(mysqli $conn, $id){
+function getChampionshipInfo(mysqli $conn, $id) : array{
     // Inicjalizacja tablicy do przechowywania szczegółowych informacji o zawodach
     $championshipInfo = [];
 
